@@ -1,0 +1,23 @@
+{
+  "name": "elections2018-frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+  },
+  "devDependencies": {
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arturogonzalezp/elections2018-frontend.git"
+  },
+  "author": "César A. González Pérez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/arturogonzalezp/elections2018-frontend/issues"
+  },
+  "homepage": "https://github.com/arturogonzalezp/elections2018-frontend#readme"
+}
