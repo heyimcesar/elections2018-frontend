@@ -1,6 +1,8 @@
+import { AppComponent } from './../app.component';
+
 export const routes = [{
 	path: "",
-	// component: ,
+	component: AppComponent,
 	children: [
 		{ path: "", redirectTo: "home", pathMatch: "full" },
 		{ path: "home", loadChildren: "./home/home.module#HomeModule" },

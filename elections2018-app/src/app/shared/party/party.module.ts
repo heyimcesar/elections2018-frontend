@@ -6,6 +6,9 @@ import { PartyComponent } from './party/party.component';
   imports: [
     CommonModule
   ],
-  declarations: [PartyComponent]
+	declarations: [PartyComponent],
+	exports: [
+		PartyComponent
+	]
 })
 export class PartyModule { }
