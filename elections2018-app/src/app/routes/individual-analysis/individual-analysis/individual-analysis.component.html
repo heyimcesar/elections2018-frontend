@@ -1,3 +1,11 @@
-<p>
-  individual-analysis works!
-</p>
+<div class="row" style="width: 100%">
+	<button class="btn btn-primary" style="margin-left: 20px;" (click)="changeView()"> Change view </button>
+</div>
+<div class="row" style="width: 100%">
+	<div *ngIf="candidatesView" style="margin: auto; width: 100%">
+		<app-candidates [candidates]="candidates" style="width: 100%"></app-candidates>
+	</div>
+	<div *ngIf="!candidatesView" style="margin: auto; width: 100%">
+		<app-parties [parties]="parties" style="width: 100%"></app-parties>
+	</div>
+</div>

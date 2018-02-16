@@ -1,3 +1,8 @@
-<p>
-  candidates works!
-</p>
+<div class="row" style="width: 100%">
+	<h1 align="center" style="width: 100%"> Individual analysis by candidate </h1>
+</div>
+<div class="row" style="margin-top: 20px; width: 100%">
+	<div *ngFor="let candidate of candidates" style="margin: auto; width: auto;">
+		<app-candidate></app-candidate>
+	</div>
+</div>

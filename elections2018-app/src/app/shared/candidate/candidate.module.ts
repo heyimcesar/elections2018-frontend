@@ -6,6 +6,9 @@ import { CandidateComponent } from './candidate/candidate.component';
   imports: [
     CommonModule
   ],
-  declarations: [CandidateComponent]
+	declarations: [CandidateComponent],
+	exports: [
+		CandidateComponent
+	]
 })
 export class CandidateModule { }
