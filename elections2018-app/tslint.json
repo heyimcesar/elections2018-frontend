@@ -24,7 +24,7 @@
     "import-spacing": true,
     "indent": [
       true,
-      "tabs"
+      "spaces"
     ],
     "interface-over-type-literal": true,
     "label-position": true,
@@ -85,7 +85,8 @@
     ],
     "prefer-const": true,
     "quotemark": [
-      false
+      true,
+      "single"
     ],
     "radix": true,
     "semicolon": [
