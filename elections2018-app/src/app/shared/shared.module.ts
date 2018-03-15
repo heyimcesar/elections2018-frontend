@@ -5,12 +5,14 @@ import { RouterModule } from '@angular/router';
 import { PartyModule } from './party/party.module';
 import { CandidateModule } from './candidate/candidate.module';
 import { CandidatesModule } from './candidates/candidates.module';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
 	imports: [
 		CandidateModule,
 		CandidatesModule,
 		CommonModule,
+		MatCardModule,
 		PartiesModule,
 		PartyModule
 	],
@@ -18,6 +20,7 @@ import { CandidatesModule } from './candidates/candidates.module';
 	exports: [
 		CandidateModule,
 		CandidatesModule,
+		MatCardModule,
 		PartiesModule,
 		PartyModule,
 		RouterModule
