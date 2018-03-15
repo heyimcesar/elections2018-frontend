@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Análisis de elecciones 2018 (Twitter)';
+  title = 'app';
 }
