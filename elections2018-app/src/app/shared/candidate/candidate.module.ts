@@ -4,7 +4,7 @@ import { CandidateComponent } from './candidate/candidate.component';
 
 @NgModule({
   imports: [
-    CommonModule
+		CommonModule,
   ],
 	declarations: [CandidateComponent],
 	exports: [
