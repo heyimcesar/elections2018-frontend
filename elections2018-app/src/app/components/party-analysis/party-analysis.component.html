@@ -1,0 +1,43 @@
+<mat-toolbar>
+		<mat-toolbar-row><span>Elections 2018</span>
+		  <div style="margin-left:100px;">
+		  <a mat-button routerLink="/home">Home</a>
+		  <a mat-button routerLink=".">Analisis Por Candidato</a>
+		  <a mat-button routerLink="/versus-analysis">Versus Analisis</a>
+	
+		</div>
+		</mat-toolbar-row>
+		</mat-toolbar>
+		<mat-grid-list cols="3" rowHeight="2:1">
+				<mat-grid-tile>
+						<a><img style="border-style:solid; border-width:4px; width:45%;height:45%;margin-left:25%;margin-right:25%;border-radius:10px;" class="imgRedonda" src="http://mxqnoticias.mx/wp-content/uploads/2018/01/alianza.jpg"/></a>
+			</mat-grid-tile>
+				<mat-grid-tile>
+						<a><img class="imgRedonda" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTK1QebeNIHNdafs2XSiMjqYhWEquKtU38sFPzumP7JC7WBDJUXA"/></a>
+				</mat-grid-tile>
+				<mat-grid-tile>
+						<a><img style="border-style:solid; border-width:4px; width:40%; height:40%; margin-left:25%;margin-right:25%;border-radius:10px;" src="http://elheraldoslp.com.mx/wp-content/uploads/2014/12/Sala-Superior-del-Tribunal-Electoral.jpg"/></a>
+
+				</mat-grid-tile>
+<!-- 			para cambiar tamano usar la sig propiedad colspan="2" rowspan="2"-->
+				<mat-grid-tile rowspan="2" >	
+					<mat-card style="width:89%;height:55%;">
+						<mat-card-title>Analisis de Tuits</mat-card-title>
+						<dnutChart ></dnutChart>
+				</mat-card></mat-grid-tile>
+				<mat-grid-tile rowspan="2">
+						<mat-card style="width:89%;height:55%;">
+								<mat-card-title>Analisis de Tuits</mat-card-title>
+								<dnutChart ></dnutChart>
+						</mat-card>
+				</mat-grid-tile>
+				<mat-grid-tile rowspan="2">
+						<mat-card style="width:89%;height:55%;">
+								<mat-card-title>Analisis de Tuits</mat-card-title>
+								<dnutChart ></dnutChart>
+						</mat-card>
+				</mat-grid-tile>
+				<mat-grid-tile>6</mat-grid-tile>
+				<mat-grid-tile>7</mat-grid-tile>
+				<mat-grid-tile>8</mat-grid-tile>
+			</mat-grid-list>
