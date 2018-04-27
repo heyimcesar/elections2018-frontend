@@ -1,4 +1,4 @@
-import { PartyAnalysisComponent } from './party-analysis.component';
+import { CandidateAnalysisComponent } from './candidate-analysis.component';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
@@ -9,18 +9,18 @@ import { Routes } from '@angular/router/src/config';
 
 
 const routes: Routes = [
-	{ path: '', component: PartyAnalysisComponent }
+	{ path: '', component: CandidateAnalysisComponent }
 ];
 
 @NgModule({
     declarations: [
-        PartyAnalysisComponent,
+        CandidateAnalysisComponent,
         dnutChart,
         
      
     ],
     exports: [
-        PartyAnalysisComponent,
+        CandidateAnalysisComponent,
         dnutChart,
         RouterModule
         
@@ -36,6 +36,6 @@ const routes: Routes = [
     ]
 })
 
-export class PartyAnalysisModule { 
+export class CandidateAnalysisModule { 
 
 }

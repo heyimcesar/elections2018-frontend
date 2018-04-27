@@ -9,7 +9,7 @@ export class BarChartDemoComponent {
     scaleShowVerticalLines: false,
     responsive: true
   };
-  public barChartLabels:string[] = ['MEADE', 'ANAYA', 'AMLO', 'MARGARITA'];
+  public barChartLabels:string[] = ['MEADE', 'ANAYA', 'AMLO', 'MARGARITA','JAIME (BRONCO)'];
   public barChartType:string = 'bar';
   public barChartLegend:boolean = true;
  
