@@ -8,13 +8,13 @@ import { HttpParams } from '@angular/common/http';
 @Injectable()
 export class DataService {
 
-    //private apiURL = 'https://lab-web-ene-2018.herokuapp.com/';
-    private apiURL = 'https://6ac2b2aa.ngrok.io/';
+    private apiURL = 'https://lab-web-ene-2018.herokuapp.com/';
+    // private apiURL = 'https://6ac2b2aa.ngrok.io/';
 
     constructor(private http: HttpClient) { }
 
-    getPolitcianTweets() : Observable<any> {
-        return this.http.get( this.apiURL + 'tweets/');
+    getPolitcianTweets(): Observable<any> {
+      return this.http.get( this.apiURL + 'tweets/');
     }
-  
+
 }

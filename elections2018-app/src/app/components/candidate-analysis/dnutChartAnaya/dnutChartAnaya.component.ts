@@ -1,58 +1,63 @@
-import { Component, EventEmitter } from '@angular/core';
+import { Component, EventEmitter, OnInit, OnDestroy } from '@angular/core';
 import { DataService } from '../../../services/data.service';
-import {Observable} from 'rxjs/Rx';
+import { Observable } from 'rxjs/Observable';
 
- 
 @Component({
-    selector: 'dnutChartAnaya',
-    templateUrl: 'dnutChartAnaya.component.html'
-   })
-   //More examples in https://valor-software.com/ng2-charts/
-   export class dnutChartAnaya {
-    // Doughnut
-  public doughnutChartLabels:string[] = ['NEGATIVOS','POSITIVOS', 'NEUTROS'];
-  public doughnutChartData:number[] = [0, 0, 0];
-  public doughnutChartType:string = 'doughnut';
-  private dataLoaded :boolean;
-  private data: any[];
- 
-  constructor (private dataService: DataService) {
-    this.dataLoaded = false;
-    this.dataService.getPolitcianTweets().subscribe(data => {
-            this.data = data;
-            console.log(this.data);
-            this.fillData(this.data);
-    })
-}
-ngOnInit(){
-
-}
-
-fillData(data : any){
-  this.doughnutChartData[0] = data.politicians[0].politician_nts ;
-  this.doughnutChartData[1] = data.politicians[0].politician_pts ;
-  this.doughnutChartData[2] = data.politicians[0].politician_na ;
-  this.dataLoaded = true;
-  Observable.interval(15000).subscribe(x => {
-    let clone = JSON.parse(JSON.stringify(this.doughnutChartData));
-    this.dataService.getPolitcianTweets().subscribe(data => {
-      this.data = data;
-       clone[0] = data.politicians[0].politician_nts ;
-       clone[1] = data.politicians[0].politician_nts ;
-       clone[2] = data.politicians[0].politician_nts ;
-       this.doughnutChartData = clone;
+  selector: 'dnutChartAnaya',
+  templateUrl: 'dnutChartAnaya.component.html'
 })
-  });
-}
+// More examples in https://valor-software.com/ng2-charts/
+export class dnutChartAnaya implements OnInit, OnDestroy {
+  // Doughnut
+  public doughnutChartLabels = ['NEGATIVOS', 'POSITIVOS', 'NEUTROS'];
+  public doughnutChartData = [0, 0, 0];
+  public doughnutChartType = 'doughnut';
+  public dataLoaded: boolean;
+	private data: any[];
+	private tweetsListener: any;
+	private interval: any;
 
+  constructor (private dataService: DataService) {
+		this.dataLoaded = false;
+		this.getData();
+	}
 
+	ngOnInit() {
+		this.interval = setInterval(() => {
+			this.getData();
+		}, 60000);
+	}
+
+	ngOnDestroy() {
+		clearInterval(this.interval);
+		if (this.tweetsListener) {
+			this.tweetsListener.unsubscribe();
+		}
+	}
+
+	getData() {
+		this.tweetsListener = this.dataService.getPolitcianTweets().subscribe(data => {
+			this.tweetsListener.unsubscribe();
+			this.data = data;
+			this.fillData(data);
+		});
+	}
+
+	fillData(data: any) {
+		const clone = this.doughnutChartData;
+		clone[0] = data.politicians[0].politician_nts ;
+		clone[1] = data.politicians[0].politician_pts ;
+		clone[2] = data.politicians[0].politician_na ;
+		this.doughnutChartData = clone;
+		this.dataLoaded = true;
+	}
 
   // events
-  public chartClicked(e:any):void {
+  public chartClicked(e: any): void {
     console.log(e);
   }
- 
-  public chartHovered(e:any):void {
+
+  public chartHovered(e: any): void {
     console.log(e);
   }
 }
