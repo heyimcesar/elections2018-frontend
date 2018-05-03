@@ -1,6 +1,6 @@
 <div>
   <div style="display: block">
-    <canvas baseChart
+    <canvas *ngIf='dataLoaded' baseChart
             [datasets]="barChartData"
             [labels]="barChartLabels"
             [options]="barChartOptions"
@@ -9,7 +9,6 @@
             (chartHover)="chartHovered($event)"
             (chartClick)="chartClicked($event)"></canvas>
   </div>
-  <button mat-button (click)="randomize()">UPDATE</button>
   <button mat-button>SHARE</button>
 
 </div>
